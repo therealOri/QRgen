@@ -14,4 +14,5 @@ img = qrcode.make(data)
 print("Done!")
 print("\nMake sure to move code.png to another folder and rename it to whatever before making a new QRcode!")
 img = qr.make_image(fill_color="black", back_color="white") #This changes the qrcode's look/what colors are used.
-img.save("code.png") #This name can be changed to whatever you want.
+name = input('What would you like the name of the code called?: ')
+img.save(name)
