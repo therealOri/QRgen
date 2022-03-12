@@ -22,7 +22,7 @@ qr = qrcode.QRCode(
     border=1,
 )
 
-data = input("What data would you like to put int the QR code?: ")
+data = input("What data would you like to put into the QR code?: ")
 clear()
 qr.add_data(data)
 qr.make(fit=True)
