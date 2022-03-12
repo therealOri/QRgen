@@ -15,5 +15,9 @@ Customizable QR code generator written in python3.
 [therealOri ~]$ source qrENV/bin/activate
 [(qrENV) therealOri ~]$ pip install qrcode
 [(qrENV) therealOri ~]$ python3 QRgen.py
+
+
+#(Optional)#
+[(qrENV) therealOri ~]$ python3 -m pip install --upgrade pip
 ```
 > - To exit the virtual enviroment: `deactivate`  |  or just close the terminal/cmd window.
