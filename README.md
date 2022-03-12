@@ -7,7 +7,7 @@ Customizable QR code generator written in python3.
 
 # Install
 
-```csharp
+```
 [therealOri ~]$ git clone https://github.com/therealOri/QRgen.git
 [therealOri ~]$ cd QRgen
 [therealOri ~]$ pip install virtualenv
