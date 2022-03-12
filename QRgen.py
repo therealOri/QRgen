@@ -1,18 +1,32 @@
 import qrcode
 
 
-qr = qrcode.QRCode(version=1,
-                   error_correction=qrcode.constants.ERROR_CORRECT_L,#Don't change this.
-                   box_size=50,#This changes how big the code will be.
-                   border=2) #This changes how big/thicc the border of the qrcode will be.
+#Default
+##-------------------------------------------##
+"""
+version=1,
+error_correction=qrcode.constants.ERROR_CORRECT_L,
+box_size=10,
+border=1,
+"""
+##-------------------------------------------##
 
-print("What text/url would you like to have be turned into a QR code?: ")
-data = input()
 
-print("Converting...")
-img = qrcode.make(data)
-print("Done!")
-print("\nMake sure to move code.png to another folder and rename it to whatever before making a new QRcode!")
-img = qr.make_image(fill_color="black", back_color="white") #This changes the qrcode's look/what colors are used.
-name = input('What would you like the name of the code called?: ')
-img.save(name)
+#QR config
+qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    box_size=10,
+    border=1,
+)
+
+
+#Set what the QR code will contain.
+data = input("What data would you like to put int the QR code?: ")
+qr.add_data(data)
+qr.make(fit=True)
+img = qr.make_image(fill_color="black", back_color="white") #Can be changed.
+
+#Give a name for the QR code image/file.
+file_name = input("Output file name: ")
+img.save(file_name)
