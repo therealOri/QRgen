@@ -1,18 +1,20 @@
 import qrcode
+import os
 
 
 #Default
-##-------------------------------------------##
 """
 version=1,
 error_correction=qrcode.constants.ERROR_CORRECT_L,
 box_size=10,
 border=1,
 """
-##-------------------------------------------##
 
 
-#QR config
+def clear():
+    os.system("cls||clear")
+
+
 qr = qrcode.QRCode(
     version=1,
     error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -20,13 +22,16 @@ qr = qrcode.QRCode(
     border=1,
 )
 
-
-#Set what the QR code will contain.
 data = input("What data would you like to put int the QR code?: ")
+clear()
 qr.add_data(data)
 qr.make(fit=True)
-img = qr.make_image(fill_color="black", back_color="white") #Can be changed.
+img = qr.make_image(fill_color="black", back_color="white")
 
-#Give a name for the QR code image/file.
+
 file_name = input("Output file name: ")
+clear()
 img.save(file_name)
+print(f"Created QR code: {file_name}")
+
+
